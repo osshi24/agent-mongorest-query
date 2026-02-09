@@ -1,0 +1,26 @@
+{
+  "name": "mgs-query-agent",
+  "version": "1.0.0",
+  "description": "Agent SDK sử dụng Claude để tự động tạo MGS Core V2 API query parameters",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "keywords": [
+    "mgs",
+    "query",
+    "agent",
+    "claude",
+    "sdk"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

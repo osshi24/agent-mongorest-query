@@ -13,7 +13,14 @@ const temp7 = ''
 const temp8 = ''
 const temp9 = ''
 // FIXED: Removed hardcoded secret key - use environment variable instead
-const secretKey = process.env.SECRET_KEY || ''
+// Validate SECRET_KEY is set and has minimum length
+const secretKey = process.env.SECRET_KEY
+if (!secretKey) {
+  throw new Error('SECRET_KEY environment variable must be set. Generate one using: openssl rand -hex 32')
+}
+if (secretKey.length < 32) {
+  throw new Error('SECRET_KEY must be at least 32 characters long for security. Current length: ' + secretKey.length)
+}
 
 // aaa
 

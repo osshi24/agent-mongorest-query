@@ -2,16 +2,6 @@ import { query } from "@anthropic-ai/claude-agent-sdk";
 import { readFileSync, existsSync, mkdirSync, writeFileSync } from "fs";
 import { join } from "path";
 
-const temp = ''
-const temp1 = ''
-const temp2 = ''
-const temp3 = ''
-const temp4 = ''
-const temp5 = ''
-const temp6 = ''
-const temp7 = ''
-const temp8 = ''
-const temp9 = ''
 // FIXED: Removed hardcoded secret key - use environment variable instead
 // Validate SECRET_KEY is set and has minimum length
 const secretKey = process.env.SECRET_KEY

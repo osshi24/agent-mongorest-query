@@ -2,6 +2,13 @@ import { query } from "@anthropic-ai/claude-agent-sdk";
 import { readFileSync, existsSync, mkdirSync, writeFileSync } from "fs";
 import { join } from "path";
 
+const temp = ''
+const temp1 = ''
+const temp2 = ''
+const temp3 = ''
+
+// aaa
+
 // Đảm bảo folder output tồn tại
 const outputDir = join(process.cwd(), "output");
 if (!existsSync(outputDir)) {

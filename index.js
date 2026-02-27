@@ -9,6 +9,7 @@ if (!existsSync(outputDir)) {
   console.log("📁 Created output directory");
 }
 // test agent openclaw
+// test agent openclaw 2
 // Đọc prompt từ file .md
 const promptPath = join(process.cwd(), "prompt.md");
 

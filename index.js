@@ -12,7 +12,8 @@ const temp6 = ''
 const temp7 = ''
 const temp8 = ''
 const temp9 = ''
-const secketkey = '1234567890'
+// FIXED: Removed hardcoded secret key - use environment variable instead
+const secretKey = process.env.SECRET_KEY || ''
 
 // aaa
 

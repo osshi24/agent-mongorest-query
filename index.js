@@ -44,9 +44,10 @@ console.log("=".repeat(60));
 console.log("");
 
 // Biến để lưu kết quả cuối cùng
-let finalResult = "";
+let finalResult = [];
 let conversationLog = [];
 
+try {
 for await (const message of query({
   prompt: prompt,
   options: {
@@ -68,8 +69,8 @@ for await (const message of query({
           timestamp: new Date().toISOString()
         });
 
-        // Lưu text response cuối cùng
-        finalResult = text;
+        // Collect tất cả text responses
+        finalResult.push(text);
       } else if ("name" in block) {
         console.log(`\n🔧 Tool: ${block.name}`);
         conversationLog.push({
@@ -84,8 +85,12 @@ for await (const message of query({
   } else if (message.type === "error") {
     const errorMsg = message.error?.message || "Unknown error";
     console.error(`\n❌ Error: ${errorMsg}`);
-    finalResult = `## Error\n\n${errorMsg}`;
+    finalResult.push(`## Error\n\n${errorMsg}`);
   }
+}
+} catch (err) {
+  console.error(`\n💥 Fatal error: ${err.message}`);
+  finalResult.push(`## Fatal Error\n\n${err.message}`);
 }
 
 // Ghi kết quả cuối cùng vào file
@@ -105,7 +110,7 @@ ${prompt}
 
 ## Result
 
-${finalResult}
+${finalResult.join("\n\n")}
 
 ---
 

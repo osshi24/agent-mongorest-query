@@ -26,6 +26,7 @@ if (!existsSync(outputDir)) {
 // test agent openclaw 9
 // test agent openclaw 10
 // Đọc prompt từ file .md
+// Đọc prompt từ file .md
 const promptPath = join(process.cwd(), "prompt.md");
 
 if (!existsSync(promptPath)) {
